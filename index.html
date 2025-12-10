@@ -1,0 +1,685 @@
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css">
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Responsive Navbar</title>
+
+  <!-- Bootstrap CSS -->
+  <link
+    href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+    rel="stylesheet"
+  />
+
+  <style>
+    .navbar {
+      background-color: #fff;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .navbar-brand img {
+      height: 45px;
+    }
+
+    .nav-link {
+      font-weight: 500;
+      color: #333 !important;
+    }
+
+    .nav-link:hover {
+      color: #007bff !important;
+    }
+
+    .btn-get-started {
+      background-color: #007bff;
+      color: white;
+      font-weight: 500;
+      border-radius: 25px;
+      padding: 8px 20px;
+    }
+
+    .btn-get-started:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+
+
+<!-- Transparent Stylish Navbar -->
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top custom-navbar">
+  <div class="container">
+    <a class="navbar-brand fw-bold text-uppercase" href="#">
+      <img src="Aury T-shirt Premium Logo.jpeg" alt="Logo" width="40" height="40" class="me-2">
+      Aury T-Shirt
+    </a>
+
+    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+      aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+      <span class="navbar-toggler-icon"></span>
+    </button>
+
+    <div class="collapse navbar-collapse" id="navbarNav">
+      <ul class="navbar-nav mx-auto">
+        <li class="nav-item"><a class="nav-link active" href="#">Home</a></li>
+        <li class="nav-item"><a class="nav-link" href="#about">About Us</a></li>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown">Our Services</a>
+          <ul class="dropdown-menu">
+            <li><a class="dropdown-item" href="#">Service 1</a></li>
+            <li><a class="dropdown-item" href="#">Service 2</a></li>
+            <li><a class="dropdown-item" href="#">Service 3</a></li>
+          </ul>
+        </li>
+        <li class="nav-item"><a class="nav-link" href="#projects">Projects</a></li>
+        <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+      </ul>
+
+      <a href="#" class="btn btn-outline-light rounded-pill px-4">Get Started</a>
+    </div>
+  </div>
+</nav>
+
+
+<!-- 🔹 Offer Banner -->
+<div class="dynamic-banner text-center text-white py-2">
+  <span id="offerText">🔥 40% OFF on T-Shirts!</span>
+</div>
+
+<!-- 🔹 CSS -->
+<style>
+.dynamic-banner {
+  background: linear-gradient(90deg, #b8860b, #ffd700);
+  font-weight: 600;
+  font-size: 16px;
+  letter-spacing: 0.5px;
+  color: #fff;
+  text-shadow: 1px 1px 3px rgba(0, 0, 0, 0.4);
+  animation: fadeIn 1s ease-in-out;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+  transition: all 0.5s ease;
+}
+
+.dynamic-banner:hover {
+  background: linear-gradient(90deg, #AAAAAA, #AAAAAA);
+  transform: scale(1.01);
+}
+
+/* 🔸 Text fade animation */
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(-10px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+</style>
+
+<!-- 🔹 JavaScript -->
+<script>
+const offers = [
+  "🔥 40% OFF on T-Shirts!",
+  "🎉 50% OFF on New Arrivals!",
+  "💥 30% OFF — Limited Time Only!",
+  "🛍️ Free Shipping on Orders Above ₹999!"
+];
+let index = 0;
+
+setInterval(() => {
+  const offerText = document.getElementById("offerText");
+  offerText.style.opacity = 0;
+  setTimeout(() => {
+    offerText.innerText = offers[index];
+    offerText.style.opacity = 1;
+    index = (index + 1) % offers.length;
+  }, 400);
+}, 3000);
+</script>
+
+
+
+<script>
+  window.addEventListener("scroll", function() {
+    const navbar = document.querySelector(".navbar");
+    navbar.classList.toggle("scrolled", window.scrollY > 50);
+  });
+</script>
+
+
+
+      <!-- Toggle Button (for mobile/tablet) -->
+      <button
+        class="navbar-toggler"
+        type="button"
+        data-bs-toggle="collapse"
+        data-bs-target="#navbarNavDropdown"
+        aria-controls="navbarNavDropdown"
+        aria-expanded="false"
+        aria-label="Toggle navigation"
+      >
+        <span class="navbar-toggler-icon"></span>
+      </button>
+
+      <!-- Middle: Nav Links -->
+      <div class="collapse navbar-collapse justify-content-center" id="navbarNavDropdown">
+        <ul class="navbar-nav mb-2 mb-lg-0">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="#">Home</a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#">About Us</a>
+          </li>
+          <li class="nav-item dropdown">
+            <a
+              class="nav-link dropdown-toggle"
+              href="#"
+              id="navbarDropdownMenuLink"
+              role="button"
+              data-bs-toggle="dropdown"
+              aria-expanded="false"
+            >
+              Our Services
+          
+      <!-- Right: Button -->
+      <div class="d-none d-lg-block">
+        </a>
+      </div>
+    </div>
+  </nav>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Hero Slider Section</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <style>
+    /* Hero Slider Custom Styles */
+    .carousel-item {
+      height: 100vh;
+      background-size: cover;
+      background-position: center;
+      position: relative;
+    }
+
+    /* Overlay */
+    .carousel-item::before {
+      content: "";
+      position: absolute;
+      inset: 0;
+      background: rgba(0, 0, 0, 0.6);
+      z-index: 1;
+    }
+
+    /* Center Content */
+    .hero-content {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      color: #fff;
+      text-align: center;
+      z-index: 2;
+      max-width: 800px;
+      width: 100%;
+      padding: 0 15px;
+    }
+
+    .hero-content h1 {
+      font-size: 3rem;
+      font-weight: 700;
+    }
+
+    .hero-content p {
+      font-size: 1.2rem;+
+      margin-bottom: 20px;
+    }
+
+    .hero-content .btn {
+      padding: 10px 25px;
+      font-size: 1rem;
+      border-radius: 30px;
+    }
+
+    /* Adjust indicators */
+    .carousel-indicators [data-bs-target] {
+      background-color: #fff;
+    }
+  </style>
+</head>
+<body>
+
+  <!-- Hero Section Slider -->
+  <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+
+    <!-- Indicators -->
+    <div class="carousel-indicators">
+      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active"></button>
+      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1"></button>
+      <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2"></button>
+    </div>
+
+    <!-- Slides -->
+    <div class="carousel-inner">
+
+      <div class="carousel-item active" style="background-image: url('Cream and Brown Photographic Beauty Site Launch Website.png');">
+        <div class="hero-content">
+          <h1>Welcome to Aury t-shirt</h1>
+          <p>We create amazing digital experiences for your business. Let's grow together and achieve success.</p>
+          <a href="#" class="btn btn-primary">Read More</a>
+        </div>
+      </div>
+
+
+
+
+
+
+
+
+      <div class="carousel-item" style="background-image: url('https://images.unsplash.com/photo-1521737604893-d14cc237f11d?auto=format&fit=crop&w=1600&q=80');">
+        <div class="hero-content">
+          <h1>Our Creative Solutions</h1>
+          <p>From design to development, we bring innovation to every project. Explore what we can do for you.</p>
+          <a href="#" class="btn btn-primary">Read More</a>
+        </div>
+      </div>
+
+      <div class="carousel-item" style="background-image: url('https://images.unsplash.com/photo-1504384308090-c894fdcc538d?auto=format&fit=crop&w=1600&q=80');">
+        <div class="hero-content">
+          <h1>Build Your Future With Us</h1>
+          <p>We partner with forward-thinking brands to create impactful digital solutions.</p>
+          <a href="#" class="btn btn-primary">Read More</a>
+        </div>
+      </div>
+    </div>
+
+    <!-- Controls -->
+    <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+      <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+    </button>
+    <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+      <span class="carousel-control-next-icon" aria-hidden="true"></span>
+    </button>
+
+  </div>
+
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+
+  <script>
+    // Optional: Adjust slide interval (auto change every 4 seconds)
+    const heroCarousel = document.querySelector('#heroCarousel');
+    const carousel = new bootstrap.Carousel(heroCarousel, {
+      interval: 4000,
+      ride: 'carousel'
+    });
+  </script>
+
+
+
+
+
+
+
+
+
+
+    </div>
+  </div>
+</section>
+<style>.services-section h5 {
+  letter-spacing: 1px;
+}
+
+.services-section .card {
+  transition: all 0.3s ease;
+  border-radius: 20px;
+}
+
+.services-section .card:hover {
+  transform: translateY(-8px);
+  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+}
+
+.services-section i {
+  color: #0d6efd;
+}</style>
+<!-- ===== Our Projects Section ===== -->
+<section class="projects-section py-5">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h5 class="text-uppercase text-primary fw-bold">Our Projects</h5>
+      <h2 class="fw-bold">Some of Our Latest Work</h2>
+      <p class="text-muted">Explore our creative T-shirt designs and printing work done for our amazing clients.</p>
+    </div>
+
+    <div class="row g-4">
+      <!-- Project 1 -->
+      <div class="col-md-4 col-sm-6">
+        <div class="project-card position-relative overflow-hidden rounded shadow-sm">
+          <img src="Cream and Brown Photographic Beauty t-shirt.jpeg" alt="Project 1" class="img-fluid rounded">
+          <div class="overlay d-flex flex-column justify-content-center align-items-center text-center text-white">
+            <h5 class="fw-bold">Classic Tee Design</h5>
+            <p>Modern minimal design for urban style.</p>
+            <p>₹299</p>
+            <a href="#" class="btn btn-outline-light btn-sm"><button class="btn btn-warning add-to-cart">Add to Cart</button>
+</div></a>
+          </div>
+        </div>
+      </div>
+
+
+
+
+
+      <!-- Project 3 -->
+      <div class="col-md-4 col-sm-6">
+        <div class="project-card position-relative overflow-hidden rounded shadow-sm">
+          <img src="images/project3.jpg" alt="Project 3" class="img-fluid rounded">
+          <div class="overlay d-flex flex-column justify-content-center align-items-center text-center text-white">
+            <h5 class="fw-bold">Streetwear Concept</h5>
+            <p>Trendy and casual everyday wear.</p>
+            <a href="#" class="btn btn-outline-light btn-sm">View Details</a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+</body>
+</html>
+<!-- ===== Our Services Section ===== -->
+<section class="services-section py-5 bg-light">
+  <div class="container">
+    <div class="text-center mb-5">
+      <h5 class="text-uppercase text-primary fw-bold">Our Services</h5>
+      <h2 class="fw-bold">What We Offer</h2>
+      <p class="text-muted">We provide quality T-shirt design, printing and delivery services that make your brand stand out.</p>
+    </div>
+
+    <div class="row g-4">
+
+      <!-- Service 1 -->
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm border-0 text-center p-4">
+          <div class="mb-3">
+            <i class="bi bi-brush display-5 text-primary"></i>
+          </div>
+          <h4 class="fw-bold mb-3">Custom Design</h4>
+          <p class="text-muted">Get your own unique T-shirt designs made by our expert team with premium quality prints.</p>
+          <a href="#" class="btn btn-outline-primary mt-2">Learn More</a>
+        </div>
+      </div>
+
+      <!-- Service 2 -->
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm border-0 text-center p-4">
+          <div class="mb-3">
+            <i class="bi bi-droplet-half display-5 text-primary"></i>
+          </div>
+          <h4 class="fw-bold mb-3">High Quality Printing</h4>
+          <p class="text-muted">We use advanced printing technology to ensure your T-shirts look fresh and last longer.</p>
+          <a href="#" class="btn btn-outline-primary mt-2">Learn More</a>
+        </div>
+      </div>
+
+      <!-- Service 3 -->
+      <div class="col-md-4">
+        <div class="card h-100 shadow-sm border-0 text-center p-4">
+          <div class="mb-3">
+            <i class="bi bi-truck display-5 text-primary"></i>
+          </div>
+          <h4 class="fw-bold mb-3">Fast Delivery</h4>
+          <p class="text-muted">We ensure on-time delivery for all your T-shirt orders — quick, safe, and reliable.</p>
+          <a href="#" class="btn btn-outline-primary mt-2">Learn More</a>
+        </div>
+      </div>
+
+<p style="margin-top:20px;"></p>
+
+
+
+
+
+
+
+<h2 data-aos="flip-right">About Us</h2>
+<p data-aos="zoom-in">Welcome to Aury T-Shirt, your one-stop destination for trendy, comfortable, and high-quality fashion.
+We believe that style is more than just what you wear — it’s how you express yourself.
+
+At Aury, every t-shirt is crafted with care, premium fabric, and modern design to make you stand out wherever you go.
+Whether you love minimal styles, bold graphics, or custom designs, we’ve got something that fits your vibe.
+
+💫 Why Choose Aury?
+
+100% soft & breathable cotton
+
+Trendy designs inspired by youth culture
+
+Affordable prices with amazing seasonal offers
+
+Fast shipping & easy returns
+
+Our mission is simple — to bring comfort, creativity, and confidence together in every outfit.
+Join the Aury family today and wear your attitude with pride.</p>
+<img src="images/about.jpg" alt="about" data-aos="fade-left">
+
+
+
+
+
+
+
+
+<style>/* General smooth styling */
+body {
+  scroll-behavior: smooth;
+  background-color: #f9f9f9;
+}
+
+/* Headings animation styling */
+h2, h3, h4 {
+  font-family: 'Poppins', sans-serif;
+  font-weight: 700;
+}
+
+/* Section spacing */
+section {
+  padding: 80px 0;
+}
+
+/* Buttons hover effect */
+.btn-primary {
+  background-color: #0d6efd;
+  border: none;
+  transition: all 0.3s ease;
+}
+.btn-primary:hover {
+  background-color: #084298;
+  transform: translateY(-3px);
+}
+
+/* Image hover zoom */
+img {
+  transition: transform 0.4s ease;
+}
+img:hover {
+  transform: scale(1.05);
+}
+
+/* Tabs styling */
+.nav-tabs .nav-link {
+  font-weight: 600;
+  color: #333;
+}
+.nav-tabs .nav-link.active {
+  color: #0d6efd;
+  border-bottom: 3px solid #0d6efd;
+}</style>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>My Portfolio</title>
+
+  <!-- Bootstrap CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+
+  <!-- AOS Animation CSS -->
+  <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+
+
+ 
+
+
+
+
+  <!-- Hero Section -->
+  <section id="hero" class="text-center py-5 mt-5" data-aos="fade-up">
+    <div class="container">
+      <h1 class="fw-bold">Welcome to My Portfolio</h1>
+      <p class="lead">Creative Designs • Modern UI • Professional Work</p>
+      <a href="#projects" class="btn btn-primary">Explore Projects</a>
+    </div>
+  </section>
+
+  <!-- Projects Section -->
+  <section id="projects" class="bg-light">
+    <div class="container">
+      <h2 class="text-center mb-5" data-aos="zoom-in">Our Projects</h2>
+      <div class="row g-4">
+        <!-- Project 1 -->
+        <div class="col-md-4 col-sm-6" data-aos="fade-up">
+          <div class="project-card position-relative overflow-hidden rounded shadow-sm">
+            <img src="images/WhatsApp Image 2025-10-22 at 10.48.23 AM.jpg" class="img-fluid rounded" alt="Project 1">
+            <div class="overlay d-flex flex-column justify-content-center align-items-center text-center">
+              <h5 class="fw-bold">Classic Tee Design</h5>
+              <p>Modern minimal design for urban style.</p>
+              <a href="#" class="btn btn-outline-light btn-sm">View Details</a>
+            </div>
+          </div>
+        </div>
+        <!-- Add more projects if you want -->
+      </div>
+    </div>
+  </section>
+
+ 
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- AOS Animation JS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 1000, offset: 100, once: true });
+  </script>
+
+
+
+
+
+ <div class="row justify-content-center">
+      <div class="col-md-8">
+        <form>
+          <div class="mb-3">
+            <input type="text" class="form-control" placeholder="Your Name" required>
+          </div>
+          <div class="mb-3">
+            <input type="email" class="form-control" placeholder="Your Email" required>
+          </div>
+          <div class="mb-3">
+            <textarea class="form-control" rows="4" placeholder="Your Message" required></textarea>
+          </div>
+          <button type="submit" class="btn btn-primary w-100">Send Message</button>
+        </form>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+
+
+
+
+
+  <!-- Footer (Placeholder for next step) -->
+  <footer class="text-center py-4">
+    <p>© 2025 MyPortfolio | All Rights Reserved</p>
+  </footer>
+
+  
+  <!-- Bootstrap JS -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+
+  <!-- AOS Animation JS -->
+  <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+  <script>
+    AOS.init({ duration: 1000, offset: 100, once: true });
+  </script>
+
+
+
+
+
+
+  <!-- Navbar Scroll Script -->
+  <script>
+    window.addEventListener("scroll", function(){
+      const navbar = document.querySelector(".navbar");
+      navbar.classList.toggle("scrolled", window.scrollY > 50);
+    });
+  </script>
+</body>
+</html>
+
+<!-- Footer Section -->
+<footer class="footer bg-dark text-white py-5">
+  <div class="container text-center">
+    <h5 class="fw-bold mb-3">Aury T-Shirts</h5>
+    <p class="mb-4">We create amazing T-shirt designs and printing solutions for your brand.</p>
+
+    <div class="social-icons mb-4">
+      <a href="#" class="text-white me-3"><i class="bi bi-facebook"></i></a>
+      <a href="#" class="text-white me-3"><i class="bi bi-instagram"></i></a>
+      <a href="#" class="text-white me-3"><i class="bi bi-twitter"></i></a>
+    </div>
+
+    <p class="mb-0">&copy; 2025 Aury T-Shirts | All Rights Reserved</p>
+  </div
+</footer>
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Google Login Example</title>
+  <script src="https://www.gstatic.com/firebasejs/10.12.1/firebase-app.js"></script>
+  <script src="https://www.gstatic.com/firebasejs/10.12.1/firebase-auth.js"></script>
+</head>
+<body style="text-align:center; margin-top:100px;">
+
+ 

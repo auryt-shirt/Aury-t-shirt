@@ -1,0 +1,84 @@
+footer a:hover {
+  color: #0d6efd;
+  text-decoration: none;
+}
+
+
+/* Transparent Stylish Navbar */
+.custom-navbar {
+  background: rgba(0, 0, 0, 0.4);
+  backdrop-filter: blur(10px);
+  transition: all 0.3s ease-in-out;
+  padding: 15px 0;
+}
+
+.navbar .nav-link {
+  color: #fff !important;
+  font-weight: 500;
+  margin: 0 10px;
+  transition: color 0.3s;
+}
+
+.navbar .nav-link:hover,
+.navbar .nav-link.active {
+  color: #0d6efd !important;
+}
+
+.navbar-brand {
+  color: #fff !important;
+  font-weight: 700;
+  letter-spacing: 1px;
+}
+
+.navbar .btn-outline-light {
+  border-color: #fff;
+  color: #fff;
+}
+
+.navbar .btn-outline-light:hover {
+  background-color: #0d6efd;
+  color: #fff;
+  border-color: #0d6efd;
+}
+
+/* Navbar scroll effect */
+.navbar.scrolled {
+  background: rgba(0, 0, 0, 0.85);
+  backdrop-filter: blur(20px);
+  padding: 10px 0;
+}
+
+.navbar-nav .nav-link:hover {
+    color: #00bfff;
+    text-shadow: 0 0 8px #00bfff;
+    transition: all 0.3s ease;
+}
+
+
+.btn-primary {
+    background: linear-gradient(90deg, #007bff, #00d4ff);
+    border: none;
+    transition: all 0.3s ease;
+}
+.btn-primary:hover {
+    transform: scale(1.05);
+    box-shadow: 0 0 15px #00bfff;
+}
+
+
+.add-to-cart {
+  background-color: #ffc107;
+  color: black;
+  font-weight: bold;
+  border: none;
+  border-radius: 30px;
+  padding: 10px 25px;
+  transition: 0.3s;
+}
+
+.add-to-cart:hover {
+  background-color: #ffb300;
+  transform: scale(1.05);
+}
+
+
